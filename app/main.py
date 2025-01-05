@@ -27,7 +27,6 @@ COMMANDS = {
     'type': lambda *args: handle_type(args)
 }
 def main():
-    print("\n" + "HERE: " + "\n" + PATH) 
     print(PATH_SEPARATOR)
     # Wait for user input
     while True:
