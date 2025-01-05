@@ -38,7 +38,7 @@ def main():
         if handler:
             handler(*args)
         elif os.path.isfile(command):
-            os.system(' '.join(user_input))
+            os.system(f"{command} {' '.join(args)}")
         else:
             print(f"{' '.join(user_input)}: command not found") 
     
