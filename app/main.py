@@ -17,7 +17,7 @@ def main():
         if handler:
             handler(*args)
         else:
-            print(f"{user_input}: command not found") 
+            print(f"{' '.join(user_input)}: command not found") 
     
 
 
