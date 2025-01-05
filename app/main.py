@@ -7,7 +7,7 @@ def handle_type(args):
     if command in COMMANDS:
         print(f"{command} is a shell builtin")
     else:
-        print(f"{command}: command not found")
+        print(f"{command}: not found")
 
 COMMANDS = {
     'echo': lambda *args: print(*args),
