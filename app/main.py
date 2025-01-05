@@ -1,8 +1,18 @@
 import sys
 
+def handle_type(args):
+    command = ""
+    if args:
+        command = args[0]
+    if command in COMMANDS:
+        print(f"{command} is a shell builtin")
+    else:
+        print(f"{command}: command not found")
+
 COMMANDS = {
+    'echo': lambda *args: print(*args),
     'exit': lambda code=0: exit(int(code)),
-    'echo': lambda *args: print(*args)
+    'type': lambda *args: handle_type(args)
 }
 def main():
 
