@@ -7,7 +7,7 @@ def main():
     while True:
         sys.stdout.write("$ ")
         user_input =  input()
-        print(f"{user_input}: command not found\n") 
+        print(f"{user_input}: command not found") 
     
 
 
