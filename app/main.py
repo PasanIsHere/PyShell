@@ -1,13 +1,25 @@
 import sys
+import os
 
+PATH = os.environ.get("PATH")
+#Ensure the path seperator is correct based on Operating System (i.e if windows or not) 
+PATH_SEPARATOR = ';' if os.name == 'nt' else ':' #
 def handle_type(args):
     command = ""
     if args:
         command = args[0]
     if command in COMMANDS:
         print(f"{command} is a shell builtin")
-    else:
-        print(f"{command}: not found")
+        return
+    
+    #Search for the command in each directory in the Path
+    for dir in PATH.split(PATH_SEPARATOR):
+        p =f"{dir}/{command}"
+        if os.path.exists(p):
+            print(f"{command} is {p}")
+            return
+    
+    print(f"{command}: not found")
 
 COMMANDS = {
     'echo': lambda *args: print(*args),
